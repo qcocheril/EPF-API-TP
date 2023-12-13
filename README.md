@@ -106,7 +106,7 @@ REST (Representational State Transfer) is an architectural style for designing n
 
 ### Objective
 
-Before starting the exercise, download the contents of the main branch of the following git repo and create your own private repo: https://github.com/klemmm922/EPF-API-TP/
+Before starting the exercise, download the contents of the main branch of the following git repo and create your own private repo: https://github.com/klemmm922/EPF-API-TP/ \
 Don't forget to add me to the repo with the following email address: clement.letizia@epfedu.fr
 
 
