@@ -104,6 +104,15 @@ REST (Representational State Transfer) is an architectural style for designing n
 
 - **Request and Response:**
 
+### Evaluation requirements
+
+The evaluation criteria will be as follows:
+
+- Proper functioning of endpoints
+- Clear documentation of code, use of explicit names and compliance with REST naming conventions. Please follow pep-8 convention for documenting your functions (exemple at the end of the README)
+- Static swagger generation through an API route
+- Completion of unit tests
+
 ### Objective
 
 Before starting the exercise, download the contents of the main branch of the following git repo and create your own private repo: https://github.com/klemmm922/EPF-API-TP/ \
@@ -143,15 +152,6 @@ About the API workflow:
 - **Step 14: Retrieve parameters from Firestore:** Add an endpoint to retrieve parameters from Firestore.
 
 - **Step 15: Update and add Firestore parameters:** Add endpoints to update or add parameters in Firestore.
-
-### Evaluation requirements
-
-The evaluation criteria will be as follows:
-
-- Proper functioning of endpoints
-- Clear documentation of code, use of explicit names and compliance with REST naming conventions. Please follow pep-8 convention for documenting your functions (exemple at the end of the README)
-- Static swagger generation through an API route
-- Completion of unit tests
 
 The completion of this TP is relatively long and may overtake TP3 
 
