@@ -84,7 +84,7 @@
 
 ### Introduction
 
-In this exercice you are going to develop an API with fastAPI for getting machine learning prediction and interact with a firestore database.
+In this exercise you are going to encapsulate data processing and machine learning model execution logic to make predictions on a well-known dataset: iris kaggle dataset
 
 ### Few elements to remember about the REST Protocol
 
@@ -106,38 +106,46 @@ REST (Representational State Transfer) is an architectural style for designing n
 
 ### Objective
 
-- **Step 1: Installing libraries:** Make sure you have FastAPI, Uvicorn, Pandas, Scikit-learn and Firestore libraries installed.
+- **Step 1: Installing libraries:** Install the libraries in the requirements.txt
 
-- **Step 2: Project initialization:** Create a main.py file, initialize the application and launch it with uvicorn.
+- **Step 2: First launch:**  Execute the main.py file in the root folder and access it.
 
-- **Step 3: Project initialization:** Create a main.py file, initialize the application and launch it with uvicorn.
+- **Step 3: Redirect root API:**  Redirect the root endpoint of your API to the automatic swagger documentation
 
-- **Step 4: Loading the Iris Flower dataset:** Add an endpoint to load the "Iris Flowwer" dataset and return it.
+- **Step 4: Access the swagger documentation:**  Access to the swagger built automatically by FastAPI
 
-- **Step 5: Processing the dataset:** Add an endpoint to be able to perform the necessary processing on the data before being able to train a model with it.
+- **Step 5: First call to the API:**  Make an API request on the hello route using the swagger directly or a tool like insomnia or postman
 
-- **Step 6: Training the classification model:** Add an endpoint to train a classification model with the processed dataset as input (take a simple model to start with).
+- **Step 6: Access the dataset:**  Create a route in api/routes/data to download and save the contents of the following kaggle dataset in the src/data folder: https://www.kaggle.com/datasets/uciml/iris. If you're having too many problems, simply download the dataset from the kaggle website. documentation : https://www.geeksforgeeks.org/how-to-download-kaggle-datasets-into-jupyter-notebook/
 
-- **Step 7: Create the Firestore collection:** Create the firestore collection "parameters" with the following parameters: "n_estimators", "criterion".
+- **Step 7: Loading the Iris Flower dataset:** Add an endpoint to load the iris dataset file as a dataframe and return it as a json.
 
-- **Step 8: Retrieve parameters from Firestore:** Add an endpoint to retrieve parameters from Firestore.
+- **Step 8: Processing the dataset:** Add an endpoint to be able to perform the necessary processing on the data before being able to train a model with it.
 
-- **Step 9: Update and add Firestore parameters:** Add endpoints to update or add parameters in Firestore.
+- **Step 9: Split in train and test:** Add an endpoint to split the iris dataset as train and test and send back a json with both
 
-- **Step 10: Prediction with Trained Model:** Add endpoint to make predictions with trained model and parameters
+- **Step 10: Parameters init:** Go to scikit learn and select any classification model to be used on the iris dataset (performance is of no interest to us in this course). Look at the parameters you need to use for this model and store them in the file src/config/model_parameters.json
 
-- **Step 11: Swagger documentation:** Access automatically generated Swagger documentation. Add a route that returns an OPENAPI YAML schema for a static version of the schema.
+- **Step 11: Training the classification model:** Add an endpoint to train a classification model with the processed dataset as input and saved this model in the folder src/models.
+
+- **Step 12: Prediction with Trained Model:** Add endpoint to make predictions with trained model and parameters. This endpoint have to send back the predictions as json.
+
+- **Step 13: Create the Firestore collection:** Create the firestore collection "parameters" with the following parameters: "n_estimators", "criterion".
+
+- **Step 14: Retrieve parameters from Firestore:** Add an endpoint to retrieve parameters from Firestore.
+
+- **Step 15: Update and add Firestore parameters:** Add endpoints to update or add parameters in Firestore.
 
 ### Evaluation requirements
 
 The evaluation criteria will be as follows:
 
 - Proper functioning of endpoints
-- Clear documentation of code, use of explicit names and compliance with REST naming conventions
+- Clear documentation of code, use of explicit names and compliance with REST naming conventions. Please follow pep-8 convention for documenting your functions (exemple at the end of the README)
 - Static swagger generation through an API route
 - Completion of unit tests
 
-The completion of this TP is relatively long and may overtake TP3, but steps 1-5 and 10-12 must be completed in TP2 in order to have a correct basis for TP3.
+The completion of this TP is relatively long and may overtake TP3 
 
 ### Documentation link :
 
@@ -148,3 +156,16 @@ The completion of this TP is relatively long and may overtake TP3, but steps 1-5
 - Scikit-Learn: https://scikit-learn.org/stable/index.html
 
 - Pandas: https://pandas.pydata.org/docs/
+
+
+### Pep-8 docstring example :
+
+"""
+  Retrieve content of a json file
+
+  Args:
+      path (str): The path of the file
+
+  Returns:
+      JSON object: The json object with the parameters
+  """
